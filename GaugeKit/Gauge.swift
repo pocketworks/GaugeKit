@@ -204,24 +204,14 @@ public class Gauge: UIView {
             //TODO: and split them proportionally in whole sector
             if colorsArray {
                 switch (rate / maxValue) {
-                case let r where r >= 0.75:
-                    strokeColor = UIColor(hue:
-                    112.0 / 360.0, saturation:
-                    0.39, brightness: 0.85,
-                            alpha: 1.0)
-                case let r where r >= 0.5:
-                    strokeColor = UIColor(hue:
-                    208.0 / 360.0, saturation:
-                    0.51, brightness: 0.75,
-                            alpha: 1.0)
-                case let r where r >= 0.25:
-                    strokeColor = UIColor(hue: 40.0 / 360.0, saturation: 0.39,
-                            brightness: 0.85, alpha: 1.0)
+                case let r where r >= 0.66:
+                    strokeColor = UIColor(red:0.24, green:0.73, blue:0.63, alpha:1.00)
+                case let r where r >= 0.33:
+                    strokeColor = UIColor(red:0.95, green:0.61, blue:0.17, alpha:1.00)
+                case let r where r >= 0:
+                    strokeColor = UIColor(red:0.75, green:0.23, blue:0.19, alpha:1.00)
                 default:
-                    strokeColor = UIColor(hue:
-                    359.0 / 360.0, saturation:
-                    0.48, brightness: 0.63,
-                            alpha: 1.0)
+                    strokeColor = UIColor(red:0.75, green:0.23, blue:0.19, alpha:1.00)
                 }
                 if (ringGradientLayer != nil) {
                     ringGradientLayer.colors = [strokeColor.CGColor, strokeColor.CGColor]
