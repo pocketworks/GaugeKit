@@ -23,7 +23,7 @@ class MainViewController: UIViewController {
     @IBOutlet var leftGauge: Gauge!
     @IBOutlet var rightGauge: Gauge!
     @IBOutlet var lineGauge: Gauge!
-    @IBAction func sliderChanged(sender: UISlider) {
+    @IBAction func sliderChanged(_ sender: UISlider) {
         gauge.rate = CGFloat(sender.value)
         gaugeSmall.rate = CGFloat(sender.value)
         leftGauge.rate = CGFloat(sender.value)
@@ -33,12 +33,12 @@ class MainViewController: UIViewController {
 //        scaleLabel.text = "\(sender.value)"
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
     }
 
-    @IBAction func animateAction(sender: AnyObject) {
+    @IBAction func animateAction(_ sender: AnyObject) {
 
 //   UIView.beginAnimations(nil, context: nil)
 //        UIView.setAnimationDuration(5.0)
@@ -47,7 +47,7 @@ class MainViewController: UIViewController {
 //        }
 //        UIView.commitAnimations()
 //
-        UIView.animateWithDuration(NSTimeInterval(5.0), animations: {
+        UIView.animate(withDuration: TimeInterval(5.0), animations: {
             () -> Void in
             print(self.allGauges.count)
             for gauge in self.allGauges {
@@ -59,11 +59,11 @@ class MainViewController: UIViewController {
 
     }
 
-    @IBAction func switchChanged(sender: UISwitch) {
-        gauge.reverse = sender.on
-        leftGauge.reverse = sender.on
-        rightGauge.reverse = sender.on
-        lineGauge.reverse = sender.on
+    @IBAction func switchChanged(_ sender: UISwitch) {
+        gauge.reverse = sender.isOn
+        leftGauge.reverse = sender.isOn
+        rightGauge.reverse = sender.isOn
+        lineGauge.reverse = sender.isOn
 
     }
 
